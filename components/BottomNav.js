@@ -16,14 +16,17 @@ const Tab = createBottomTabNavigator();
 export default function BottomNav() {
   return (
     <Tab.Navigator
-      tabBarOptions={{
-        showLabel: false,
+      screenOptions={{
+        tabBarStyle: { position: "absolute" },
+        headerShown: false,
       }}
     >
       <Tab.Screen
         component={HomeScreen}
         name="EatFit Recipes"
         options={{
+          tabBarShowLabel: false,
+
           tabBarIcon: ({ focused, color, size }) =>
             focused ? (
               <Ionicons name="home" size={25} color={color} />
@@ -36,6 +39,7 @@ export default function BottomNav() {
         component={SearchScreen}
         name="Search"
         options={{
+          tabBarShowLabel: false,
           tabBarIcon: ({ focused, size, color }) =>
             focused ? (
               <AntDesign name="search1" size={25} color={color} />
@@ -48,6 +52,7 @@ export default function BottomNav() {
         component={MealPlanScreen}
         name="Meal Plans"
         options={{
+          tabBarShowLabel: false,
           tabBarIcon: ({ focused, size, color }) =>
             focused ? (
               <Entypo name="calendar" size={25} color={color} />
@@ -60,6 +65,7 @@ export default function BottomNav() {
         component={ProfileScreen}
         name="Profile"
         options={{
+          tabBarShowLabel: false,
           tabBarIcon: ({ focused, size, color }) =>
             focused ? (
               <Ionicons name="ios-person-circle" size={size} color={color} />
@@ -76,6 +82,7 @@ export default function BottomNav() {
         component={SettingsScreen}
         name="Settings"
         options={{
+          tabBarShowLabel: false,
           tabBarIcon: ({ focused, size, color }) =>
             focused ? (
               <Ionicons name="cog" size={25} color={color} />
