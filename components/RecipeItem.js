@@ -6,35 +6,22 @@ import {
   Image,
   FlatList,
   ScrollView,
+  TouchableOpacity,
 } from "react-native";
 import img1 from "../assets/images/img1.jpg";
 
-export default function RecipeItem() {
+export default function RecipeItem({ imageUrl, videoUrl, title, subTitle }) {
   return (
     <View style={styles.root}>
-      <View style={styles.recipeContainer}>
-        <Image source={img1} style={styles.image} />
-        <View style={styles.textContainer}>
-          <Text style={styles.recipeHeader}>
-            California Grilled Veggie Sandwitch
-          </Text>
-          <Text style={styles.recipeSubHeader}>
-            For a smoky and sumptuous veggi-filled
-          </Text>
+      <TouchableOpacity>
+        <View style={styles.recipeContainer}>
+          <Image source={img1} style={styles.image} />
+          <View style={styles.textContainer}>
+            <Text style={styles.recipeHeader}>{title}</Text>
+            <Text style={styles.recipeSubHeader}>{subTitle}</Text>
+          </View>
         </View>
-      </View>
-
-      <View style={styles.recipeContainer}>
-        <Image source={img1} style={styles.image} />
-        <View style={styles.textContainer}>
-          <Text style={styles.recipeHeader}>
-            California Grilled Veggie Sandwitch
-          </Text>
-          <Text style={styles.recipeSubHeader}>
-            For a smoky and sumptuous veggi-filled
-          </Text>
-        </View>
-      </View>
+      </TouchableOpacity>
     </View>
   );
 }
