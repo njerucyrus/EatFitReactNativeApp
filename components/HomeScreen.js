@@ -66,7 +66,7 @@ export default function HomeScreen() {
     );
   };
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <RoundTextInput placeHolderText="Search Here" />
       <FlatList
         style={styles.list}
@@ -79,8 +79,11 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
   list: {
-    marginTop: 48,
+    marginTop: 72,
     marginEnd: 8,
     marginStart: 8,
     padding: 8,
