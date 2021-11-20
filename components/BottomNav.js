@@ -15,52 +15,51 @@ const Tab = createBottomTabNavigator();
 
 export default function BottomNav() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      tabBarOptions={{
+        showLabel: false,
+      }}
+    >
       <Tab.Screen
+        component={HomeScreen}
         name="EatFit Recipes"
         options={{
-          tabBarShowLabel: false,
           tabBarIcon: ({ focused, color, size }) =>
             focused ? (
-              <Ionicons name="home" size={size} color={color} />
+              <Ionicons name="home" size={25} color={color} />
             ) : (
-              <Ionicons name="home-outline" size={24} color={color} />
+              <Ionicons name="home-outline" size={25} color={color} />
             ),
         }}
-        component={HomeScreen}
       ></Tab.Screen>
       <Tab.Screen
+        component={SearchScreen}
         name="Search"
         options={{
-          tabBarShowLabel: false,
           tabBarIcon: ({ focused, size, color }) =>
             focused ? (
-              <AntDesign name="search1" size={size} color={color} />
+              <AntDesign name="search1" size={25} color={color} />
             ) : (
-              <AntDesign name="search1" size={size} color={color} />
+              <AntDesign name="search1" size={25} color={color} />
             ),
         }}
-        component={SearchScreen}
       ></Tab.Screen>
-
       <Tab.Screen
+        component={MealPlanScreen}
         name="Meal Plans"
         options={{
-          tabBarShowLabel: false,
           tabBarIcon: ({ focused, size, color }) =>
             focused ? (
-              <Entypo name="calendar" size={size} color={color} />
+              <Entypo name="calendar" size={25} color={color} />
             ) : (
-              <Entypo name="calendar" size={size} color={color} />
+              <Entypo name="calendar" size={25} color={color} />
             ),
         }}
-        component={MealPlanScreen}
       ></Tab.Screen>
-
       <Tab.Screen
+        component={ProfileScreen}
         name="Profile"
         options={{
-          tabBarShowLabel: false,
           tabBarIcon: ({ focused, size, color }) =>
             focused ? (
               <Ionicons name="ios-person-circle" size={size} color={color} />
@@ -72,21 +71,18 @@ export default function BottomNav() {
               />
             ),
         }}
-        component={ProfileScreen}
       ></Tab.Screen>
-
       <Tab.Screen
+        component={SettingsScreen}
         name="Settings"
         options={{
-          tabBarShowLabel: false,
           tabBarIcon: ({ focused, size, color }) =>
             focused ? (
-              <Ionicons name="cog" size={size} color={color} />
+              <Ionicons name="cog" size={25} color={color} />
             ) : (
-              <Ionicons name="cog" size={24} color={color} />
+              <Ionicons name="cog" size={25} color={color} />
             ),
         }}
-        component={SettingsScreen}
       ></Tab.Screen>
     </Tab.Navigator>
   );
