@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import RecipeItem from "./RecipeItem";
 import RoundTextInput from "./RoundTextInput";
+import Trends from "./Trends/Trends";
 
 const data = [
   {
@@ -68,6 +69,7 @@ export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <RoundTextInput placeHolderText="Search Here" />
+      <Trends />
       <FlatList
         style={styles.list}
         data={data}
@@ -83,7 +85,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   list: {
-    marginTop: 72,
+    marginTop: 400,
     marginEnd: 8,
     marginStart: 8,
     padding: 8,
