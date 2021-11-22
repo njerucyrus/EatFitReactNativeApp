@@ -1,9 +1,10 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-
+import Focusawarestatusbar from "./FocusAwareStatusBar";
 export default function ProfileScreen() {
   return (
     <View style={styles.root}>
+      <Focusawarestatusbar barStyle="default" />
       <Text>Profile.</Text>
     </View>
   );

@@ -1,19 +1,19 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, StyleSheet, SafeAreaView, StatusBar } from "react-native";
+import Focusawarestatusbar from "./FocusAwareStatusBar";
+import Recipedetailscreen from "./RecipeDetail/RecipeDetailScreen";
 
-export default function SearchScreen() {
+const Searchscreen = () => {
   return (
     <View style={styles.root}>
-      <Text>Search here</Text>
+      <Focusawarestatusbar barStyle="light-content" />
+      <Recipedetailscreen />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    alignContent: "center",
-  },
+  root: {},
 });
+
+export default Searchscreen;

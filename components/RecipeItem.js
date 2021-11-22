@@ -39,7 +39,6 @@ const styles = StyleSheet.create({
     marginTop: 8,
     borderRadius: 16,
     resizeMode: "cover",
-    backgroundColor: "#0000ffff",
   },
   textContainer: {
     padding: 4,

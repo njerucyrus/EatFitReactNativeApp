@@ -1,10 +1,11 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import Focusawarestatusbar from "./FocusAwareStatusBar";
 
 export default function SettingsScreen() {
   return (
     <View style={styles.root}>
-      <Text>Settings</Text>
+      <Focusawarestatusbar barStyle="default" />
     </View>
   );
 }

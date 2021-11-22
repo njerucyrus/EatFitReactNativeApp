@@ -6,7 +6,9 @@ import {
   TextInput,
   SafeAreaView,
   FlatList,
+  StatusBar,
 } from "react-native";
+import Focusawarestatusbar from "./FocusAwareStatusBar";
 import RecipeItem from "./RecipeItem";
 import RoundTextInput from "./RoundTextInput";
 import Trends from "./Trends/Trends";
@@ -67,25 +69,40 @@ export default function HomeScreen() {
     );
   };
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.root}>
+      <Focusawarestatusbar barStyle="default" />
       <RoundTextInput placeHolderText="Search Here" />
       <Trends />
+      <View style={styles.headerContainer}>
+        <Text style={styles.header}>Hot Recipes</Text>
+      </View>
+
       <FlatList
         style={styles.list}
         data={data}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />
-    </SafeAreaView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  root: {
     flex: 1,
   },
+  headerContainer: {
+    marginTop: 330,
+  },
+  header: {
+    color: "#212121",
+    fontSize: 22,
+    marginStart: 16,
+    fontWeight: "bold",
+  },
+  listContainer: {},
   list: {
-    marginTop: 400,
+    marginTop: 8,
     marginEnd: 8,
     marginStart: 8,
     padding: 8,
