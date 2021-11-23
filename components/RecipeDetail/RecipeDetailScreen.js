@@ -6,6 +6,7 @@ import img4 from "../../assets/images/img4.jpg";
 import { AntDesign } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Ingridients from "./Ingridients";
+import Focusawarestatusbar from "../FocusAwareStatusBar";
 
 const ingridientList = [
   "1/4 olive oil",
@@ -43,7 +44,7 @@ const displayHardness = (hardness) => {
 const Recipedetailscreen = () => {
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <Focusawarestatusbar barStyle="dark-content" />
       <View style={styles.imageContainer}>
         <Image source={img4} style={styles.image} />
 

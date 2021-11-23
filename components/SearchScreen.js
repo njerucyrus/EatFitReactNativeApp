@@ -7,7 +7,6 @@ const Searchscreen = () => {
   return (
     <View style={styles.root}>
       <Focusawarestatusbar barStyle="light-content" />
-      <Recipedetailscreen />
     </View>
   );
 };

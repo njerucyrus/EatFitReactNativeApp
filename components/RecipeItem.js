@@ -10,10 +10,19 @@ import {
 } from "react-native";
 import img1 from "../assets/images/img1.jpg";
 
-export default function RecipeItem({ imageUrl, videoUrl, title, subTitle }) {
+export default function RecipeItem({
+  imageUrl,
+  videoUrl,
+  title,
+  subTitle,
+  navigation,
+}) {
+  const openRecipeDetail = () => {
+    navigation.navigate("RecipeDetailScreen", { title });
+  };
   return (
     <View style={styles.root}>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={openRecipeDetail}>
         <View style={styles.recipeContainer}>
           <Image source={img1} style={styles.image} />
           <View style={styles.textContainer}>

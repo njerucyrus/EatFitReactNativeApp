@@ -6,10 +6,10 @@ import { Entypo } from "@expo/vector-icons";
 import { EvilIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import SearchScreen from "./SearchScreen";
-import HomeScreen from "./HomeScreen";
 import MealPlanScreen from "./MealPlanScreen";
 import ProfileScreen from "./ProfileScreen";
 import SettingsScreen from "./SettingsScreen";
+import HomeScreenNavigator from "../CustomNavigation";
 
 const Tab = createBottomTabNavigator();
 
@@ -22,8 +22,8 @@ export default function BottomNav() {
       }}
     >
       <Tab.Screen
-        component={HomeScreen}
-        name="EatFit Recipes"
+        component={HomeScreenNavigator}
+        name="HomeScreenNavigator"
         options={{
           tabBarShowLabel: false,
 
@@ -37,7 +37,7 @@ export default function BottomNav() {
       ></Tab.Screen>
       <Tab.Screen
         component={SearchScreen}
-        name="Search"
+        name="SearchScreen"
         options={{
           tabBarShowLabel: false,
           tabBarIcon: ({ focused, size, color }) =>
@@ -50,7 +50,7 @@ export default function BottomNav() {
       ></Tab.Screen>
       <Tab.Screen
         component={MealPlanScreen}
-        name="Meal Plans"
+        name="MealPlanScreen"
         options={{
           tabBarShowLabel: false,
           tabBarIcon: ({ focused, size, color }) =>
@@ -63,7 +63,7 @@ export default function BottomNav() {
       ></Tab.Screen>
       <Tab.Screen
         component={ProfileScreen}
-        name="Profile"
+        name="ProfileScreen"
         options={{
           tabBarShowLabel: false,
           tabBarIcon: ({ focused, size, color }) =>
@@ -80,7 +80,7 @@ export default function BottomNav() {
       ></Tab.Screen>
       <Tab.Screen
         component={SettingsScreen}
-        name="Settings"
+        name="SettingsScreen"
         options={{
           tabBarShowLabel: false,
           tabBarIcon: ({ focused, size, color }) =>

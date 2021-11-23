@@ -57,7 +57,7 @@ const data = [
     subTitle: "For a smoky and sumptuous veggi-filled",
   },
 ];
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
   const renderItem = ({ item }) => {
     return (
       <RecipeItem
@@ -65,6 +65,7 @@ export default function HomeScreen() {
         videoUrl={item.videUrl}
         title={item.title}
         subTitle={item.subTitle}
+        navigation={navigation}
       />
     );
   };
