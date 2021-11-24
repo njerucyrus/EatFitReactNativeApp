@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   imageContainer: {
-    marginTop: 86,
+    marginTop: 25,
     height: 180,
 
     width: "75%",
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     backgroundColor: "white",
     position: "absolute",
-    top: 120,
+    top: 108,
     start: 32,
     borderRadius: 12,
   },

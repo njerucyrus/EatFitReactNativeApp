@@ -10,7 +10,8 @@ import {
 } from "react-native";
 import Focusawarestatusbar from "./FocusAwareStatusBar";
 import RecipeItem from "./RecipeItem";
-import RoundTextInput from "./RoundTextInput";
+import RoundTextInput from "./Search/RoundTextInput";
+import Search from "./Search/Search";
 import Trends from "./Trends/Trends";
 
 const data = [
@@ -72,7 +73,7 @@ export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.root}>
       <Focusawarestatusbar barStyle="default" />
-      <RoundTextInput placeHolderText="Search Here" />
+      <Search />
       <Trends />
       <View style={styles.headerContainer}>
         <Text style={styles.header}>Hot Recipes</Text>
@@ -93,7 +94,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   headerContainer: {
-    marginTop: 330,
+    marginTop: 280,
   },
   header: {
     color: "#212121",

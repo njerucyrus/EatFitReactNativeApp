@@ -42,8 +42,8 @@ const styles = StyleSheet.create({
   },
   recipeContainer: { flexDirection: "row" },
   image: {
-    height: 120,
-    width: 120,
+    height: 100,
+    width: 100,
     marginStart: 8,
     marginTop: 8,
     borderRadius: 16,

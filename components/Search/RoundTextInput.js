@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Text, TextInput } from "react-native";
+import { withSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function RoundTextInput({ placeHolderText }) {
   return (
@@ -15,16 +16,16 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
   },
   input: {
-    height: 32,
+    height: 38,
     width: "80%",
     alignContent: "center",
+    justifyContent: "center",
     alignItems: "center",
     alignSelf: "center",
-    borderColor: "black",
-    borderWidth: 1,
     borderRadius: 16,
     marginTop: 42,
     color: "black",
+    backgroundColor: "white",
     padding: 8,
   },
 });

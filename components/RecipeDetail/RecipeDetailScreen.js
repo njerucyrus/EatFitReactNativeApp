@@ -44,7 +44,7 @@ const displayHardness = (hardness) => {
 const Recipedetailscreen = () => {
   return (
     <View style={styles.root}>
-      <Focusawarestatusbar barStyle="dark-content" />
+      <Focusawarestatusbar barStyle="default" />
       <View style={styles.imageContainer}>
         <Image source={img4} style={styles.image} />
 
