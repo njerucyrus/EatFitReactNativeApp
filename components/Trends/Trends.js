@@ -1,9 +1,62 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  FlatList,
+} from "react-native";
 import TrendsItem from "./TrendsItem";
 import { MaterialIcons } from "@expo/vector-icons";
 
-const Trends = () => {
+const data = [
+  {
+    id: 0,
+    imageUrl: "",
+    videUrl: "",
+    title: "California Grilled Veggie Sandwitch",
+    subTitle: "For a smoky and sumptuous veggi-filled",
+  },
+  {
+    id: 1,
+    imageUrl: "",
+    videUrl: "",
+    title: "California Grilled Veggie Sandwitch",
+    subTitle: "For a smoky and sumptuous veggi-filled",
+  },
+  {
+    id: 2,
+    imageUrl: "",
+    videUrl: "",
+    title: "California Grilled Veggie Sandwitch",
+    subTitle: "For a smoky and sumptuous veggi-filled",
+  },
+  {
+    id: 3,
+    imageUrl: "",
+    videUrl: "",
+    title: "California Grilled Veggie Sandwitch",
+    subTitle: "For a smoky and sumptuous veggi-filled",
+  },
+  {
+    id: 4,
+    imageUrl: "",
+    videUrl: "",
+    title: "California Grilled Veggie Sandwitch",
+    subTitle: "For a smoky and sumptuous veggi-filled",
+  },
+  {
+    id: 5,
+    imageUrl: "",
+    videUrl: "",
+    title: "California Grilled Veggie Sandwitch",
+    subTitle: "For a smoky and sumptuous veggi-filled",
+  },
+];
+const Trends = ({ navigation }) => {
+  const renderItem = ({ item }) => {
+    return <TrendsItem item={item} navigation={navigation} />;
+  };
   return (
     <View style={styles.root}>
       <View style={styles.container}>
@@ -15,16 +68,23 @@ const Trends = () => {
           </View>
         </TouchableOpacity>
       </View>
-      <TrendsItem />
+      <View style={styles.listContainer}>
+        <FlatList
+          data={data}
+          horizontal={true}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+        />
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  root: {},
   container: {
     flexDirection: "row",
     justifyContent: "space-between",
-    width: "100%",
   },
   lblTrends: {
     marginTop: 16,
@@ -44,6 +104,10 @@ const styles = StyleSheet.create({
     color: "#FFA000",
     marginTop: 2,
     fontSize: 18,
+  },
+  listContainer: {
+    width: "100%",
+    height: "auto",
   },
 });
 

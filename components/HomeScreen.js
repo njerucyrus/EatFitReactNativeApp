@@ -7,12 +7,14 @@ import {
   SafeAreaView,
   FlatList,
   StatusBar,
+  ScrollView,
 } from "react-native";
 import Focusawarestatusbar from "./FocusAwareStatusBar";
 import RecipeItem from "./RecipeItem";
 import RoundTextInput from "./Search/RoundTextInput";
 import Search from "./Search/Search";
 import Trends from "./Trends/Trends";
+import TrendsItem from "./Trends/TrendsItem";
 
 const data = [
   {
@@ -70,39 +72,38 @@ export default function HomeScreen({ navigation }) {
       />
     );
   };
-  return (
-    <View style={styles.root}>
-      <Focusawarestatusbar barStyle="default" />
-      <Search />
-      <Trends />
-      <View style={styles.headerContainer}>
-        <Text style={styles.header}>Hot Recipes</Text>
-      </View>
 
-      <FlatList
-        style={styles.list}
-        data={data}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id}
-      />
-    </View>
+  return (
+    <ScrollView horizontal={false}>
+      <View style={styles.root}>
+        <Focusawarestatusbar barStyle="default" />
+        <Search />
+        <Trends />
+        <View style={styles.headerContainer}>
+          <Text style={styles.header}>Hot Recipes</Text>
+        </View>
+        <View>
+          <FlatList
+            style={styles.list}
+            data={data}
+            renderItem={renderItem}
+            keyExtractor={(item) => item.id}
+          />
+        </View>
+      </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-  },
-  headerContainer: {
-    marginTop: 280,
-  },
+  root: { flex: 1 },
+  headerContainer: { marginTop: 2 },
   header: {
     color: "#212121",
     fontSize: 22,
     marginStart: 16,
     fontWeight: "bold",
   },
-  listContainer: {},
   list: {
     marginTop: 8,
     marginEnd: 8,

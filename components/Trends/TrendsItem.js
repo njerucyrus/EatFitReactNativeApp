@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import img4 from "../../assets/images/img4.jpg";
 import { AntDesign } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -31,22 +31,24 @@ const displayHardness = (hardness) => {
   );
 };
 
-export default function TrendsItem() {
+export default function TrendsItem({ item, navigation }) {
   return (
     <View style={styles.root}>
-      <View style={styles.imageContainer}>
-        <Image source={img4} style={styles.image} />
-        <View style={styles.infoBox}>
-          <Text style={styles.infoBoxHeader}>Delicious Healty Kebab</Text>
-          <Text style={styles.infoBoxSubHeader}>Quick and easy </Text>
-          <View style={styles.divider} />
-          <View style={styles.metaDataBox}>
-            {displayStars(4.8)}
-            {displayTime("25 mins")}
-            {displayHardness("easy")}
+      <TouchableOpacity>
+        <View style={styles.imageContainer}>
+          <Image source={img4} style={styles.image} />
+          <View style={styles.infoBox}>
+            <Text style={styles.infoBoxHeader}>Delicious Healthy Kebab</Text>
+            <Text style={styles.infoBoxSubHeader}>Quick and easy </Text>
+            <View style={styles.divider} />
+            <View style={styles.metaDataBox}>
+              {displayStars(4.8)}
+              {displayTime("25 mins")}
+              {displayHardness("easy")}
+            </View>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -57,7 +59,10 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     marginTop: 25,
-    height: 180,
+    marginEnd: 16,
+    marginBottom: 8,
+    padding: 8,
+    height: 280,
 
     width: "75%",
     start: 30,
@@ -66,19 +71,19 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   image: {
-    height: "100%",
-    width: "100%",
+    height: 200,
+    width: 300,
     borderRadius: 8,
   },
 
   infoBox: {
     height: 110,
-    width: "80%",
+    width: 280,
     flexDirection: "column",
     backgroundColor: "white",
     position: "absolute",
-    top: 108,
-    start: 32,
+    top: 130,
+    start: 14,
     borderRadius: 12,
   },
   infoBoxHeader: {
