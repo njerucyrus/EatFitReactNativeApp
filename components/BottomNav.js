@@ -6,10 +6,9 @@ import { Entypo } from "@expo/vector-icons";
 import { EvilIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import SearchScreen from "./SearchScreen";
-import MealPlanScreen from "./MealPlanScreen";
 import ProfileScreen from "./ProfileScreen";
 import SettingsScreen from "./SettingsScreen";
-import HomeScreenNavigator from "../CustomNavigation";
+import { HomeScreenNavigator, MealPlanNavigator } from "../CustomNavigation";
 
 const Tab = createBottomTabNavigator();
 
@@ -49,8 +48,8 @@ export default function BottomNav() {
         }}
       ></Tab.Screen>
       <Tab.Screen
-        component={MealPlanScreen}
-        name="MealPlanScreen"
+        component={MealPlanNavigator}
+        name="MealPlan"
         options={{
           tabBarShowLabel: false,
           tabBarIcon: ({ focused, size, color }) =>

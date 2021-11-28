@@ -1,6 +1,5 @@
 import React from "react";
 import { StyleSheet, View, Text, TextInput } from "react-native";
-import { withSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function RoundTextInput({ placeHolderText }) {
   return (

@@ -1,14 +1,14 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import Focusawarestatusbar from "./FocusAwareStatusBar";
-export default function ProfileScreen() {
+const ProfileScreen = () => {
   return (
     <View style={styles.root}>
       <Focusawarestatusbar barStyle="default" />
       <Text>Profile.</Text>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   root: {
@@ -18,3 +18,5 @@ const styles = StyleSheet.create({
     alignContent: "center",
   },
 });
+
+export default ProfileScreen;
